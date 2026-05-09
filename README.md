@@ -68,10 +68,10 @@ The main objective of this project is to analyze coffee shop retail sales data a
 
 ---
 
-# 📷 Dashboard Preview
 
-(Add your dashboard screenshot here)
-![Coffee Shop Dashboard](Coffee Shop Sales.png)
+## 📷 Dashboard Preview
+
+![Coffee Shop Sales Dashboard](Coffee%20Shop%20Sales.png)
 ---
 
 # 🚀 Outcome
