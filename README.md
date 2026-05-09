@@ -86,3 +86,94 @@ This project helped strengthen skills in:
 * Business Insight Generation
 
 ---
+
+# ⚙️ Data Cleaning & Transformation Process
+
+The raw dataset was cleaned and transformed using Power Query in Excel before building the dashboard.
+
+### Data Preparation Steps Performed
+
+* Imported raw Excel dataset into Power Query for transformation.
+
+* Created conditional columns to categorize product sizes into:
+
+  * Small
+  * Regular
+  * Large
+  * Not Defined
+
+* Used Replace Values to standardize inconsistent size labels:
+
+  * `Lg → Large`
+  * `Sm → Small`
+  * `Rg → Regular`
+
+* Created a custom column to calculate total sales amount:
+
+  `Total_Bill = Unit_Price * Transaction_Qty`
+
+* Extracted transaction time from datetime column using:
+
+  * Text After Delimiter
+
+* Generated:
+
+  * Month Name
+  * Day Name
+
+* Created proper weekday and month sorting using:
+
+  * Day Number
+  * Week Number
+  * Month Number
+
+* Used Power Pivot and Data Model for proper sequential sorting of weekdays and months.
+
+---
+
+# 📐 Measures & KPI Calculations
+
+The following measures were created for KPI analysis:
+
+### Total Sales
+
+```DAX
+SUM(Total_Bill)
+```
+
+### Total Footfall
+
+```DAX
+DISTINCTCOUNT(transaction_id)
+```
+
+### Average Bill Per Person
+
+```DAX
+SUM(Total_Bill) / DISTINCTCOUNT(transaction_id)
+```
+
+### Average Orders Per Person
+
+```DAX
+SUM(transaction_qty) / DISTINCTCOUNT(transaction_id)
+```
+
+### Top Selling Products
+
+* Identified using sales revenue and quantity sold analysis.
+
+---
+
+# 📊 Dashboard Development
+
+After data transformation and KPI creation:
+
+* Pivot Tables were created for business analysis.
+* Pivot Charts and visuals were developed.
+* Interactive slicers were added for:
+
+  * Month filtering
+  * Day filtering
+* KPI cards and business visuals were designed to provide actionable insights.
+
